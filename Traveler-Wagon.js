@@ -5,8 +5,8 @@
 // an isHealthy property, with an initial value of true, which indicates whether a 
 // traveler is sick.
 // The Traveler class should also have the following methods:
-// hunt() – Increases the traveler's food by 2.
-// eat() – Consumes 1 unit of the traveler's food. If the traveler doesn't 
+// hunt() - Increases the traveler's food by 2.
+// eat() - Consumes 1 unit of the traveler's food. If the traveler doesn't 
 // have any food left to eat, the traveler is no longer healthy 
 // (set isHealthy to false).
 class Traveler {
@@ -35,7 +35,7 @@ class Traveler {
 // this is the maximum number of passengers a wagon can hold.
 // a passengers list, which is initially an empty array.
 // The Wagon class should have these methods:
-// getAvailableSeatCount() - Returns the number of empty seats, determined by the 
+// getAvailableSeatCount()- Returns the number of empty seats, determined by the 
 // capacity set when the wagon was created, subtracted by the number of passengers
 // currently on board.
 // join(traveler) - Adds the traveler to the wagon if there is space.
@@ -56,8 +56,8 @@ class Wagon{
             this.passengers.push(traveler)}
     }
     shouldQuarantine(){
-        for(let index = 0; index < this.passengers.length; index++){
-            if(this.passengers[index].isHealthy === false){
+        for(let counter = 0; counter < this.passengers.length; counter++){
+            if(this.passengers[counter].isHealthy === false){
                 return true
             }
         }
@@ -66,10 +66,10 @@ class Wagon{
     }
     totalFood(){
         let totaLfood = 0
-        for(let index = 0; index < this.passengers.length; index++){
-            totaLfood = totaLfood + this.passengers[index].totaLfood
-        }
-        return totaLfood
+        for (let counter = 0; counter < this.passengers.length; counter += 1){
+              totaLfood += this.passengers[counter].food
+            }
+            return totaLfood
 
     }
 }
